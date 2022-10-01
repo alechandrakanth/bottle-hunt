@@ -25,7 +25,7 @@ public class BottleController : MonoBehaviour
         }
     }
 
-    void Throw()
+    public void Throw()
     {
         forceToAdd = new Vector3(0.35f, 1, 0);
         rb.AddForce(forceToAdd * forceValue, ForceMode.Impulse);
