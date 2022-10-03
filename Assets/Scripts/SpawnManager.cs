@@ -29,7 +29,10 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnBottle()
     {
-       Instantiate(bottlePrefab, new Vector3(-1097, -228, -48), bottlePrefab.transform.rotation);
+        float spawnPosX= Random.Range(-1314f, 70f);
+         
+       // Vector3(-1314, -402, -48)
+       Instantiate(bottlePrefab, new Vector3(spawnPosX, -228, -48), bottlePrefab.transform.rotation);
        
 
     }

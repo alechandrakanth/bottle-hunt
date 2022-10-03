@@ -28,7 +28,18 @@ public class BottleController : MonoBehaviour
 
     public void Throw()
     {
-        forceToAdd = new Vector3(0.35f, 1, 0);
+        float spawnPosX = Random.Range(0.35f, 0.5f);
+        float spawnPosY = Random.Range(0.6f, 1.0f);
+
+        if (transform.position.x < -570f)
+        {
+            forceToAdd = new Vector3(spawnPosX, spawnPosY, 0);
+        }
+        else
+        {
+            forceToAdd = new Vector3(-spawnPosX, spawnPosY, 0);
+        }
+        
         rb.AddForce(forceToAdd * forceValue, ForceMode.Impulse);
     }
 }
