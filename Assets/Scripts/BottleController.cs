@@ -41,5 +41,8 @@ public class BottleController : MonoBehaviour
         }
         
         rb.AddForce(forceToAdd * forceValue, ForceMode.Impulse);
+
+        
     }
+    
 }

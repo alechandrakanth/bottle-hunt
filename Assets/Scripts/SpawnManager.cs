@@ -9,12 +9,15 @@ public class SpawnManager : MonoBehaviour
     public BottleController bottleControllerScript;
     private float startDelay = 2.0f;
     private float spawnInterval = 2.0f;
+
+    public int lives = 3;
   
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Start");
         InvokeRepeating("SpawnBottle", startDelay, spawnInterval);
+        Debug.Log("Spawned Bottle");
         bottleControllerScript = bottlePrefab.GetComponent<BottleController>();
     }
 
@@ -22,9 +25,11 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.Space))
-       // {
-       //     bottleControllerScript.Throw();
-       // }
+        // {
+        //     bottleControllerScript.Throw();
+        // }
+        
+       
     }
 
     void SpawnBottle()
@@ -32,8 +37,11 @@ public class SpawnManager : MonoBehaviour
         float spawnPosX= Random.Range(-1314f, 70f);
          
        // Vector3(-1314, -402, -48)
-       Instantiate(bottlePrefab, new Vector3(spawnPosX, -228, -48), bottlePrefab.transform.rotation);
-       
+       Instantiate(bottlePrefab, new Vector3(spawnPosX, -322, -48), bottlePrefab.transform.rotation);
+        
 
     }
+
+    
+
 }

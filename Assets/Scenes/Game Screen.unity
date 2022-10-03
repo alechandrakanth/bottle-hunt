@@ -214,8 +214,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607784687}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1097, y: -84, z: 307}
-  m_LocalScale: {x: 810.16266, y: 810.16266, z: 810.16266}
+  m_LocalPosition: {x: -714.7354, y: 113.9319, z: 307}
+  m_LocalScale: {x: 487.1519, y: 810.16266, z: 173.5146}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411017f9f790f9541850111cb1cec806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityMod: 40
 --- !u!4 &1917523843
 Transform:
   m_ObjectHideFlags: 0
@@ -458,3 +459,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottlePrefab: {fileID: 1826945174853446997, guid: 310508c595237be499a4568371b16741, type: 3}
   bottleControllerScript: {fileID: 1826945174853446955, guid: 310508c595237be499a4568371b16741, type: 3}
+  lives: 3

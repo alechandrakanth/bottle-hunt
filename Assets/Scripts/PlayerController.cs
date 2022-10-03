@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float gravityMod = 1;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +23,9 @@ public class PlayerController : MonoBehaviour
             
             if(Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit.transform);
                 GameObject.Destroy(hit.transform.gameObject);
+                ScoreManager.instance.AddPoint();
+               
             }
         }
     }
