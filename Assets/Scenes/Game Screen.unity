@@ -457,3 +457,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottlePrefab: {fileID: 1826945174853446997, guid: 310508c595237be499a4568371b16741, type: 3}
+  bottleControllerScript: {fileID: 1826945174853446955, guid: 310508c595237be499a4568371b16741, type: 3}
