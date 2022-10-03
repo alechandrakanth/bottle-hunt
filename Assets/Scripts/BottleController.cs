@@ -12,22 +12,20 @@ public class BottleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // declaration
         rb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityMod;
+
+        // throws object on instantiate
+        forceToAdd = new Vector3(0.35f, 1, 0);
+        rb.AddForce(forceToAdd * forceValue, ForceMode.Impulse);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Throw();
-        }
+        
     }
 
-    public void Throw()
-    {
-        forceToAdd = new Vector3(0.35f, 1, 0);
-        rb.AddForce(forceToAdd * forceValue, ForceMode.Impulse);
-    }
+    
 }

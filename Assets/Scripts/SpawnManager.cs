@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //bottleControllerScript = bottlePrefab.GetComponent<BottleController>();
+        bottleControllerScript = bottlePrefab.GetComponent<BottleController>();
         InvokeRepeating("SpawnBottle", startDelay, spawnInterval);
     }
 
@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnBottle()
     {
-        bottleControllerScript.Throw();
+      
         Instantiate(bottlePrefab, new Vector3(-1097, -228, -48), bottlePrefab.transform.rotation);
     }
 }
