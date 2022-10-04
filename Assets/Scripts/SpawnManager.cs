@@ -33,7 +33,8 @@ public class SpawnManager : MonoBehaviour
         if (lives == 0)
         {
             gameOver = true;
-
+            CancelInvoke("SpawnBottle");
+            PlayerPrefs.Save();
         }
     }
 
