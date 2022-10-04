@@ -11,6 +11,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnInterval = 2.0f;
 
     public int lives = 3;
+    public bool gameOver = false;
   
     // Start is called before the first frame update
     void Start()
@@ -28,8 +29,12 @@ public class SpawnManager : MonoBehaviour
         // {
         //     bottleControllerScript.Throw();
         // }
-        
-       
+
+        if (lives == 0)
+        {
+            gameOver = true;
+
+        }
     }
 
     void SpawnBottle()
