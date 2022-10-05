@@ -45,7 +45,7 @@ public class SpawnManager : MonoBehaviour
         while (!gameOver)
         {
             int index = Random.Range(0, bottlePrefab.Count);
-            spawnRate = Random.Range(1.5f, 3.0f);
+            spawnRate = Random.Range(0.8f, 2.2f);
             yield return new WaitForSeconds(spawnRate);
 
             float spawnPosX = Random.Range(-36,36);
