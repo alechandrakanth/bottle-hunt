@@ -48,10 +48,10 @@ public class SpawnManager : MonoBehaviour
             spawnRate = Random.Range(1.5f, 3.0f);
             yield return new WaitForSeconds(spawnRate);
 
-            float spawnPosX = Random.Range(-1314f, 70f);
+            float spawnPosX = Random.Range(-36,36);
 
             // Vector3(-1314, -402, -48)
-            Instantiate(bottlePrefab[index], new Vector3(spawnPosX, -322, -48), bottlePrefab[index].transform.rotation);
+            Instantiate(bottlePrefab[index], new Vector3(spawnPosX, -20, 32), bottlePrefab[index].transform.rotation);
         }
         
         

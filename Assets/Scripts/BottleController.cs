@@ -6,7 +6,8 @@ public class BottleController : MonoBehaviour
 {
     private Rigidbody rb;
     public float forceValue=20f;
-    
+
+    public float torqueValue = 5f;
 
     private Vector3 forceToAdd;
     // Start is called before the first frame update
@@ -28,20 +29,20 @@ public class BottleController : MonoBehaviour
 
     public void Throw()
     {
-        float spawnPosX = Random.Range(0.35f, 0.5f);
-        float spawnPosY = Random.Range(0.6f, 1.0f);
+        float vectorX = Random.Range(0.35f, 0.5f);
+        float vectorY = Random.Range(0.6f, 1.0f);
 
-        if (transform.position.x < -570f)
+        if (transform.position.x < -0)
         {
-            forceToAdd = new Vector3(spawnPosX, spawnPosY, 0);
+            forceToAdd = new Vector3(vectorX, vectorY, 0);
         }
         else
         {
-            forceToAdd = new Vector3(-spawnPosX, spawnPosY, 0);
+            forceToAdd = new Vector3(-vectorX, vectorY, 0);
         }
         
         rb.AddForce(forceToAdd * forceValue, ForceMode.Impulse);
-        rb.AddTorque(Random.Range(1000, 1500), Random.Range(-1000 , 1500), Random.Range(1000, 1500), ForceMode.Impulse);
+        rb.AddTorque(Random.Range(-torqueValue, torqueValue), Random.Range(-torqueValue, torqueValue), Random.Range(-torqueValue, torqueValue), ForceMode.Impulse);
 
     }
 
