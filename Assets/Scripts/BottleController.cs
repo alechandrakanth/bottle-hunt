@@ -41,8 +41,10 @@ public class BottleController : MonoBehaviour
         }
         
         rb.AddForce(forceToAdd * forceValue, ForceMode.Impulse);
+        rb.AddTorque(Random.Range(1000, 1500), Random.Range(-1000 , 1500), Random.Range(1000, 1500), ForceMode.Impulse);
 
-        
     }
+
+    
     
 }
