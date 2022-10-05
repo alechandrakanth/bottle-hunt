@@ -5,21 +5,23 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject bottlePrefab;
+    public List<GameObject> bottlePrefab;
     public BottleController bottleControllerScript;
-    private float startDelay = 2.0f;
-    private float spawnInterval = 2.0f;
+    
 
     public int lives = 3;
     public bool gameOver = false;
+
+    private float spawnRate;
   
     // Start is called before the first frame update
     void Start()
     {
+
         Debug.Log("Start");
-        InvokeRepeating("SpawnBottle", startDelay, spawnInterval);
+        StartCoroutine(SpawnBottle());
         Debug.Log("Spawned Bottle");
-        bottleControllerScript = bottlePrefab.GetComponent<BottleController>();
+        
     }
 
     // Update is called once per frame
@@ -38,12 +40,20 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void SpawnBottle()
+    IEnumerator SpawnBottle()
     {
-        float spawnPosX= Random.Range(-1314f, 70f);
-         
-       // Vector3(-1314, -402, -48)
-       Instantiate(bottlePrefab, new Vector3(spawnPosX, -322, -48), bottlePrefab.transform.rotation);
+        while (!gameOver)
+        {
+            int index = Random.Range(0, bottlePrefab.Count);
+            spawnRate = Random.Range(1.5f, 3.0f);
+            yield return new WaitForSeconds(spawnRate);
+
+            float spawnPosX = Random.Range(-1314f, 70f);
+
+            // Vector3(-1314, -402, -48)
+            Instantiate(bottlePrefab[index], new Vector3(spawnPosX, -322, -48), bottlePrefab[index].transform.rotation);
+        }
+        
         
 
     }
