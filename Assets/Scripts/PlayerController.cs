@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource audioGun; //Audio Source reference
 
+    public ParticleSystem explodePrefab;
    
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,8 @@ public class PlayerController : MonoBehaviour
                 {
                 
                 GameObject.Destroy(hit.transform.gameObject); // destroy hit object
-
+                ParticleSystem explosion=Instantiate(explodePrefab, hit.transform.position, hit.transform.rotation); // Instantiate Particle
+                explosion.Play(); // play Particle animation
                 ScoreManager.instance.AddPoint(); // Call add point in score manager instance
                  
                 }

@@ -1913,6 +1913,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 23d80b5297162e9459fea98d1bec36f4, type: 3}
   - {fileID: 8300000, guid: 7a15fc41b1d885940a382f983eb3f01b, type: 3}
   - {fileID: 8300000, guid: 5dbc74a65da58144aa0a20190bcd4909, type: 3}
+  explodePrefab: {fileID: 7765147456661882633, guid: 0a27940171cecbc45a7a785010fd7fda, type: 3}
 --- !u!4 &1917523843
 Transform:
   m_ObjectHideFlags: 0
