@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     public Text scoreText;
     public Text highScoreText;
     public Text livesText;
+    public Text gameOverText;
+    public Image gameOverBox;
 
     int score = 0;
     int highscore = 0;
@@ -33,7 +35,11 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (lives == 0)
+        {
+            gameOverText.gameObject.SetActive(true);
+            gameOverBox.gameObject.SetActive(true);
+        }
     }
 
     public void AddPoint()

@@ -128,4 +128,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ebd0c066d5d9a418112b56cf59b8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceValue: 1500
+  forceValue: 40
+  torqueValue: 5

@@ -19,11 +19,10 @@ public class CheckOutofBounds : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bottle")&&spwnManager.gameOver==false)
-        {
-            Destroy(other.gameObject);
+        Destroy(other.gameObject);
+        if (spwnManager.gameOver==false)
+       {
             ScoreManager.instance.TakeLife();
-            
-        }
+       }
     }
 }
