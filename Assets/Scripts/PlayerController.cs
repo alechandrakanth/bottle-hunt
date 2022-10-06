@@ -7,10 +7,13 @@ public class PlayerController : MonoBehaviour
     // public float gravityMod = 1.6f;
 
     SpawnManager spwnManager;
-    
+    public List<AudioClip> gunShotSounds;
+
+    private AudioSource audioGun;
     // Start is called before the first frame update
     void Start()
     {
+        audioGun = GetComponent<AudioSource>();
         // Physics.gravity *= gravityMod;
         spwnManager = GetComponent<SpawnManager>();
     }
@@ -22,6 +25,9 @@ public class PlayerController : MonoBehaviour
         
             if (Input.GetMouseButtonDown(0) && spwnManager.gameOver==false)
             {
+                int index = Random.Range(0, gunShotSounds.Count);
+                audioGun.clip  = gunShotSounds[index];
+                audioGun.Play();
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
