@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        // Spawning Coroutine called.
+        // Countdown Coroutine called.
         Debug.Log("Start");
 
         StartCoroutine(CountdowntoStart());
@@ -47,7 +47,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    IEnumerator CountdowntoStart()
+    IEnumerator CountdowntoStart() // Countdown Coroutine
     {
         while (countDownTime > 0)
         {
@@ -56,7 +56,7 @@ public class SpawnManager : MonoBehaviour
             countDownTime--;
         }
         countDownDisplay.text = "SHOOT!";
-        StartCoroutine(SpawnBottle());
+        StartCoroutine(SpawnBottle()); // Spawning Coroutine
 
         yield return new WaitForSeconds(1f);
         countDownDisplay.gameObject.SetActive(false);
