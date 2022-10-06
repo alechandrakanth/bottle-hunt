@@ -32,4 +32,13 @@ public class MenuScript : MonoBehaviour
         // goes back to the Main Menu
         SceneManager.LoadScene("Start Menu");
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Game Screen");
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
