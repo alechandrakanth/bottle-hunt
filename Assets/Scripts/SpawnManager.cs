@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public List<GameObject> bottlePrefab;
-    public BottleController bottleControllerScript;
+    
     
 
     public int lives = 3;

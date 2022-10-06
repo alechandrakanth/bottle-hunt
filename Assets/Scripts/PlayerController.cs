@@ -10,12 +10,15 @@ public class PlayerController : MonoBehaviour
     public List<AudioClip> gunShotSounds;
 
     private AudioSource audioGun;
+
+   
     // Start is called before the first frame update
     void Start()
     {
         audioGun = GetComponent<AudioSource>();
         // Physics.gravity *= gravityMod;
         spwnManager = GetComponent<SpawnManager>();
+        
     }
 
     // Update is called once per frame
@@ -34,7 +37,8 @@ public class PlayerController : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    GameObject.Destroy(hit.transform.gameObject);
+                
+                GameObject.Destroy(hit.transform.gameObject);
                     ScoreManager.instance.AddPoint();
 
                 }

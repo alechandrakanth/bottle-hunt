@@ -10,6 +10,9 @@ public class BottleController : MonoBehaviour
     public float torqueValue = 5f;
 
     private Vector3 forceToAdd;
+
+   public ParticleSystem destroyParticle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,8 @@ public class BottleController : MonoBehaviour
         
         Throw();
         // throws object on instantiate
+
+      
         
     }
 
@@ -47,5 +52,7 @@ public class BottleController : MonoBehaviour
     }
 
     
-    
+
+
+
 }
