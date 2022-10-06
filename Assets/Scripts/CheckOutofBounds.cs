@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckOutofBounds : MonoBehaviour
 {
-    SpawnManager spwnManager;
+    SpawnManager spwnManager; // reference to spawn manager
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class CheckOutofBounds : MonoBehaviour
         Destroy(other.gameObject);
         if (spwnManager.gameOver==false)
        {
-            ScoreManager.instance.TakeLife();
+            ScoreManager.instance.TakeLife(); // Reduces Life in Spawn Manager
        }
     }
 }

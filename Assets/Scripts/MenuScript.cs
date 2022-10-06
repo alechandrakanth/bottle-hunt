@@ -17,16 +17,19 @@ public class MenuScript : MonoBehaviour
     }
     public void PlayGame()
     {
+        // goes forward by one build index
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void HowToPlay()
     {
+        // goes to How to Play screen
         SceneManager.LoadScene("How To Play");
     }
 
     public void Back()
     {
+        // goes back to the Main Menu
         SceneManager.LoadScene("Start Menu");
     }
 }

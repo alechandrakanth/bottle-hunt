@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class SpawnManager : MonoBehaviour
 {
-    public List<GameObject> bottlePrefab;
+    public static SpawnManager instance;
+    public List<GameObject> bottlePrefab; // List of objects(cans) to spawn
     
     
 
-    public int lives = 3;
-    public bool gameOver = false;
+    public int lives = 3; // lives initialized
+    public bool gameOver = false; // game over bool 
 
-    private float spawnRate;
-  
+    private float spawnRate; // Rate of spawning initialized
+
+    public int countDownTime = 3;
+    public Text countDownDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
+        // Spawning Coroutine called.
         Debug.Log("Start");
-        StartCoroutine(SpawnBottle());
+
+        StartCoroutine(CountdowntoStart());
+
         Debug.Log("Spawned Bottle");
         
     }
@@ -34,24 +41,40 @@ public class SpawnManager : MonoBehaviour
 
         if (lives == 0)
         {
-            gameOver = true;
-            CancelInvoke("SpawnBottle");
-            PlayerPrefs.Save();
+            gameOver = true; // sets game over to true
+           // CancelInvoke("SpawnBottle"); Invoke not being used anymore
+            PlayerPrefs.Save(); // saves PlayerPrefs for highscore.
         }
     }
 
-    IEnumerator SpawnBottle()
+    IEnumerator CountdowntoStart()
+    {
+        while (countDownTime > 0)
+        {
+            countDownDisplay.text = countDownTime.ToString();
+            yield return new WaitForSeconds(1f);
+            countDownTime--;
+        }
+        countDownDisplay.text = "SHOOT!";
+        StartCoroutine(SpawnBottle());
+
+        yield return new WaitForSeconds(1f);
+        countDownDisplay.gameObject.SetActive(false);
+
+    }
+
+    IEnumerator SpawnBottle() // Spawning IEnum
     {
         while (!gameOver)
         {
-            int index = Random.Range(0, bottlePrefab.Count);
-            spawnRate = Random.Range(0.8f, 2.2f);
-            yield return new WaitForSeconds(spawnRate);
+            int index = Random.Range(0, bottlePrefab.Count); //Random index generated
+            spawnRate = Random.Range(0.8f, 2.2f); // Random Spawn rate generated
+            yield return new WaitForSeconds(spawnRate); // wait for spawning seconds
 
-            float spawnPosX = Random.Range(-36,36);
+            float spawnPosX = Random.Range(-36,36); // Random Spawn X Coordinate
 
-            // Vector3(-1314, -402, -48)
-            Instantiate(bottlePrefab[index], new Vector3(spawnPosX, -20, 32), bottlePrefab[index].transform.rotation);
+            // Vector3(-1314, -402, -48) // previous reference 
+            Instantiate(bottlePrefab[index], new Vector3(spawnPosX, -20, 32), bottlePrefab[index].transform.rotation); // Spawn Cans
         }
         
         
