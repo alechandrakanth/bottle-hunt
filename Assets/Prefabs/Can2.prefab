@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc043a9656f81bc488510dcda2b382ab, type: 2}
+  - {fileID: 2100000, guid: 51d8fd6981fdaa04592259df70ac1f10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceValue: 40
+  torqueValue: 5
 --- !u!54 &4290275812469683588
 Rigidbody:
   m_ObjectHideFlags: 0
