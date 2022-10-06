@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager instance;
@@ -44,7 +45,22 @@ public class SpawnManager : MonoBehaviour
             gameOver = true; // sets game over to true
            // CancelInvoke("SpawnBottle"); Invoke not being used anymore
             PlayerPrefs.Save(); // saves PlayerPrefs for highscore.
+            StartCoroutine(CountdowntoEnd());
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Game Screen");
+        }
+
+    }
+
+    
+
+    IEnumerator CountdowntoEnd()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator CountdowntoStart() // Countdown Coroutine
