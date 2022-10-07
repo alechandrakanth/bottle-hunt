@@ -8,8 +8,8 @@ public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager instance;
     public List<GameObject> bottlePrefab; // List of objects(cans) to spawn
-    
-    
+
+
 
     public int lives = 3; // lives initialized
     public bool gameOver = false; // game over bool 
@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(CountdowntoStart());
 
         Debug.Log("Spawned Bottle");
-        
+
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class SpawnManager : MonoBehaviour
         if (lives == 0)
         {
             gameOver = true; // sets game over to true
-           // CancelInvoke("SpawnBottle"); Invoke not being used anymore
+                             // CancelInvoke("SpawnBottle"); Invoke not being used anymore
             PlayerPrefs.Save(); // saves PlayerPrefs for highscore.
             StartCoroutine(CountdowntoEnd());
         }
@@ -55,7 +55,7 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    
+
 
     IEnumerator CountdowntoEnd()
     {
@@ -87,16 +87,16 @@ public class SpawnManager : MonoBehaviour
             spawnRate = Random.Range(0.8f, 2.2f); // Random Spawn rate generated
             yield return new WaitForSeconds(spawnRate); // wait for spawning seconds
 
-            float spawnPosX = Random.Range(-36,36); // Random Spawn X Coordinate
+            float spawnPosX = Random.Range(-36, 36); // Random Spawn X Coordinate
 
             // Vector3(-1314, -402, -48) // previous reference 
             Instantiate(bottlePrefab[index], new Vector3(spawnPosX, -20, 32), bottlePrefab[index].transform.rotation); // Spawn Cans
         }
-        
-        
+
+
 
     }
 
-    
+
 
 }

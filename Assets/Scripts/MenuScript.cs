@@ -7,13 +7,13 @@ public class MenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void PlayGame()
     {
@@ -35,10 +35,10 @@ public class MenuScript : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Game Screen");
+        SceneManager.LoadScene("Game Screen"); // restarts the game
     }
     public void Quit()
     {
-        Application.Quit();
+        Application.Quit(); // quit app
     }
 }

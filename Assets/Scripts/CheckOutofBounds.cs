@@ -14,15 +14,15 @@ public class CheckOutofBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
-        if (spwnManager.gameOver==false)
-       {
+        if (spwnManager.gameOver == false)
+        {
             ScoreManager.instance.TakeLife(); // Reduces Life in Spawn Manager
-       }
+        }
     }
 }

@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
         // initializing values
 
         lives = spwnManager.lives;
-        highscore=PlayerPrefs.GetInt("highscore", 0);
+        highscore = PlayerPrefs.GetInt("highscore", 0);
         scoreText.text = "Score: " + score.ToString();
         highScoreText.text = "Highscore: " + highscore.ToString();
         livesText.text = "Lives: " + lives.ToString();
@@ -59,18 +59,18 @@ public class ScoreManager : MonoBehaviour
         highScoreText.text = "Highscore: " + highscore.ToString();
         Debug.Log(score);
 
-        
+
     }
     public void TakeLife()
     {
-       // if (lives > 0)
-       // {
-       // reduces life on Miss
-       // if statement removed because it was redundant.
-            lives--;
-            spwnManager.lives = lives;
-            livesText.text = "Lives: " + lives.ToString();
-            Debug.Log(lives);
-       // }
+        // if (lives > 0)
+        // {
+        // reduces life on Miss
+        // if statement removed because it was redundant.
+        lives--;
+        spwnManager.lives = lives;
+        livesText.text = "Lives: " + lives.ToString();
+        Debug.Log(lives);
+        // }
     }
 }

@@ -5,31 +5,31 @@ using UnityEngine;
 public class BottleController : MonoBehaviour
 {
     private Rigidbody rb; // rigidbody reference
-    public float forceValue=20f; //  force value to act on object
+    public float forceValue = 20f; //  force value to act on object
 
     public float torqueValue = 5f; // torque value to act on object
 
     private Vector3 forceToAdd; // Initialize vector for throwing
 
-   public ParticleSystem destroyParticle; // Particle system (not figured out yet)
+    public ParticleSystem destroyParticle; // Particle system (not figured out yet)
 
     // Start is called before the first frame update
     void Start()
     {
         // declaration
         rb = GetComponent<Rigidbody>();
-        
+
         Throw();
         // throws object on instantiate
 
-      
-        
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Throw()
@@ -45,14 +45,14 @@ public class BottleController : MonoBehaviour
         {
             forceToAdd = new Vector3(-vectorX, vectorY, 0); // Throw towards top left
         }
-        
+
         rb.AddForce(forceToAdd * forceValue, ForceMode.Impulse); // Add Force Impulse
         rb.AddTorque(Random.Range(-torqueValue, torqueValue), Random.Range(-torqueValue, torqueValue), Random.Range(-torqueValue, torqueValue), ForceMode.Impulse);
 
         // Add Torque Impulse
     }
 
-    
+
 
 
 
